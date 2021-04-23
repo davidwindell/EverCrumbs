@@ -9,8 +9,8 @@ use Magento\Framework\View\Element\Template\Context;
 
 class Evercrumbs extends Template
 {
-    protected Data $catalogData = null;
-    private Registry $registry;
+    protected $catalogData = null;
+    private $registry;
 
     public function __construct(
         Context $context,
@@ -23,12 +23,12 @@ class Evercrumbs extends Template
         parent::__construct($context, $data);
     }
 
-    private function getRootCategoryId(): int
+    private function getRootCategoryId()
     {
         return (int) $this->_storeManager->getStore()->getRootCategoryId();
     }
 
-    public function getCrumbs(): array
+    public function getCrumbs()
     {
         $crumbs = [];
         $crumbs[] = [
